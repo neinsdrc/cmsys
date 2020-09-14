@@ -1,0 +1,19 @@
+server:
+  port: 8081 #有空格 k: v 推荐使用yml/yaml
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: cmsys
+  datasource:
+    url: jdbc:mysql://localhost:3306/cmsys?useSSL=false
+    username: root
+    password: Kong123@
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapperLocations: classpath:static/mapper/*.xml
+  #配置对象别名，mapper中可以不指定包路径
+  typeAliasesPackage: com.buaa.cmsys.entity

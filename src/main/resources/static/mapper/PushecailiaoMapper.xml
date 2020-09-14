@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.buaa.cmsys.mapper.PushecailiaoMapper">
+
+    <resultMap type="Pushecailiao" id="PushecailiaoResult">
+        <result property="id"    column="id"    />
+        <result property="cengid"    column="cengid"    />
+        <result property="cailiaoType"    column="cailiao_type"    />
+        <result property="cailiaoId"    column="cailiao_id"    />
+        <result property="pushejiaodu"    column="pushejiaodu"    />
+        <result property="gyXiesu"    column="gy_xiesu"    />
+        <result property="gyJingei"    column="gy_jingei"    />
+        <result property="gyQieshenY"    column="gy_qieshen_y"    />
+        <result property="gyQieshenX"    column="gy_qieshen_x"    />
+        <result property="gyXixuefangshi"    column="gy_xixuefangshi"    />
+        <result property="djCailiao"    column="dj_cailiao"    />
+        <result property="djZhonglei"    column="dj_zhonglei"    />
+        <result property="djZhijing"    column="dj_zhijing"    />
+        <result property="gyGongjiancailiao"    column="gy_gongjiancailiao"    />
+        <result property="djLuoxuanjiao"    column="dj_luoxuanjiao"    />
+        <result property="djChishu"    column="dj_chishu"    />
+        <result property="djJinqianjiao"    column="dj_jinqianjiao"    />
+        <result property="djTuceng"    column="dj_tuceng"    />
+        <result property="jcPmd"    column="jc_pmd"    />
+    </resultMap>
+
+    <sql id="selectPushecailiaoVo">
+        select id, cengid, cailiao_type, cailiao_id, pushejiaodu, gy_xiesu, gy_jingei, gy_qieshen_y, gy_qieshen_x, gy_xixuefangshi, dj_cailiao, dj_zhonglei, dj_zhijing, gy_gongjiancailiao, dj_luoxuanjiao, dj_chishu, dj_jinqianjiao, dj_tuceng, jc_pmd from pushecailiao
+    </sql>
+
+    <select id="selectPushecailiaoList" parameterType="Pushecailiao" resultMap="PushecailiaoResult">
+        <include refid="selectPushecailiaoVo"/>
+        <where>
+            <if test="cengid != null  and cengid != ''"> and cengid = #{cengid}</if>
+            <if test="cailiaoType != null  and cailiaoType != ''"> and cailiao_type = #{cailiaoType}</if>
+            <if test="cailiaoId != null  and cailiaoId != ''"> and cailiao_id = #{cailiaoId}</if>
+            <if test="pushejiaodu != null  and pushejiaodu != ''"> and pushejiaodu = #{pushejiaodu}</if>
+            <if test="gyXiesu != null  and gyXiesu != ''"> and gy_xiesu = #{gyXiesu}</if>
+            <if test="gyJingei != null  and gyJingei != ''"> and gy_jingei = #{gyJingei}</if>
+            <if test="gyQieshenY != null  and gyQieshenY != ''"> and gy_qieshen_y = #{gyQieshenY}</if>
+            <if test="gyQieshenX != null  and gyQieshenX != ''"> and gy_qieshen_x = #{gyQieshenX}</if>
+            <if test="gyXixuefangshi != null  and gyXixuefangshi != ''"> and gy_xixuefangshi = #{gyXixuefangshi}</if>
+            <if test="djCailiao != null  and djCailiao != ''"> and dj_cailiao = #{djCailiao}</if>
+            <if test="djZhonglei != null  and djZhonglei != ''"> and dj_zhonglei = #{djZhonglei}</if>
+            <if test="djZhijing != null  and djZhijing != ''"> and dj_zhijing = #{djZhijing}</if>
+            <if test="gyGongjiancailiao != null  and gyGongjiancailiao != ''"> and gy_gongjiancailiao = #{gyGongjiancailiao}</if>
+            <if test="djLuoxuanjiao != null  and djLuoxuanjiao != ''"> and dj_luoxuanjiao = #{djLuoxuanjiao}</if>
+            <if test="djChishu != null  and djChishu != ''"> and dj_chishu = #{djChishu}</if>
+            <if test="djJinqianjiao != null  and djJinqianjiao != ''"> and dj_jinqianjiao = #{djJinqianjiao}</if>
+            <if test="djTuceng != null  and djTuceng != ''"> and dj_tuceng = #{djTuceng}</if>
+            <if test="jcPmd != null  and jcPmd != ''"> and jc_pmd = #{jcPmd}</if>
+        </where>
+    </select>
+
+    <select id="selectPushecailiaoById" parameterType="Long" resultMap="PushecailiaoResult">
+        <include refid="selectPushecailiaoVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertPushecailiao" parameterType="Pushecailiao" useGeneratedKeys="true" keyProperty="id">
+        insert into pushecailiao
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cengid != null">cengid,</if>
+            <if test="cailiaoType != null">cailiao_type,</if>
+            <if test="cailiaoId != null">cailiao_id,</if>
+            <if test="pushejiaodu != null">pushejiaodu,</if>
+            <if test="gyXiesu != null">gy_xiesu,</if>
+            <if test="gyJingei != null">gy_jingei,</if>
+            <if test="gyQieshenY != null">gy_qieshen_y,</if>
+            <if test="gyQieshenX != null">gy_qieshen_x,</if>
+            <if test="gyXixuefangshi != null">gy_xixuefangshi,</if>
+            <if test="djCailiao != null">dj_cailiao,</if>
+            <if test="djZhonglei != null">dj_zhonglei,</if>
+            <if test="djZhijing != null">dj_zhijing,</if>
+            <if test="gyGongjiancailiao != null">gy_gongjiancailiao,</if>
+            <if test="djLuoxuanjiao != null">dj_luoxuanjiao,</if>
+            <if test="djChishu != null">dj_chishu,</if>
+            <if test="djJinqianjiao != null">dj_jinqianjiao,</if>
+            <if test="djTuceng != null">dj_tuceng,</if>
+            <if test="jcPmd != null">jc_pmd,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cengid != null">#{cengid},</if>
+            <if test="cailiaoType != null">#{cailiaoType},</if>
+            <if test="cailiaoId != null">#{cailiaoId},</if>
+            <if test="pushejiaodu != null">#{pushejiaodu},</if>
+            <if test="gyXiesu != null">#{gyXiesu},</if>
+            <if test="gyJingei != null">#{gyJingei},</if>
+            <if test="gyQieshenY != null">#{gyQieshenY},</if>
+            <if test="gyQieshenX != null">#{gyQieshenX},</if>
+            <if test="gyXixuefangshi != null">#{gyXixuefangshi},</if>
+            <if test="djCailiao != null">#{djCailiao},</if>
+            <if test="djZhonglei != null">#{djZhonglei},</if>
+            <if test="djZhijing != null">#{djZhijing},</if>
+            <if test="gyGongjiancailiao != null">#{gyGongjiancailiao},</if>
+            <if test="djLuoxuanjiao != null">#{djLuoxuanjiao},</if>
+            <if test="djChishu != null">#{djChishu},</if>
+            <if test="djJinqianjiao != null">#{djJinqianjiao},</if>
+            <if test="djTuceng != null">#{djTuceng},</if>
+            <if test="jcPmd != null">#{jcPmd},</if>
+        </trim>
+    </insert>
+
+    <update id="updatePushecailiao" parameterType="Pushecailiao">
+        update pushecailiao
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="cengid != null">cengid = #{cengid},</if>
+            <if test="cailiaoType != null">cailiao_type = #{cailiaoType},</if>
+            <if test="cailiaoId != null">cailiao_id = #{cailiaoId},</if>
+            <if test="pushejiaodu != null">pushejiaodu = #{pushejiaodu},</if>
+            <if test="gyXiesu != null">gy_xiesu = #{gyXiesu},</if>
+            <if test="gyJingei != null">gy_jingei = #{gyJingei},</if>
+            <if test="gyQieshenY != null">gy_qieshen_y = #{gyQieshenY},</if>
+            <if test="gyQieshenX != null">gy_qieshen_x = #{gyQieshenX},</if>
+            <if test="gyXixuefangshi != null">gy_xixuefangshi = #{gyXixuefangshi},</if>
+            <if test="djCailiao != null">dj_cailiao = #{djCailiao},</if>
+            <if test="djZhonglei != null">dj_zhonglei = #{djZhonglei},</if>
+            <if test="djZhijing != null">dj_zhijing = #{djZhijing},</if>
+            <if test="gyGongjiancailiao != null">gy_gongjiancailiao = #{gyGongjiancailiao},</if>
+            <if test="djLuoxuanjiao != null">dj_luoxuanjiao = #{djLuoxuanjiao},</if>
+            <if test="djChishu != null">dj_chishu = #{djChishu},</if>
+            <if test="djJinqianjiao != null">dj_jinqianjiao = #{djJinqianjiao},</if>
+            <if test="djTuceng != null">dj_tuceng = #{djTuceng},</if>
+            <if test="jcPmd != null">jc_pmd = #{jcPmd},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deletePushecailiaoById" parameterType="Long">
+        delete from pushecailiao where id = #{id}
+    </delete>
+
+    <delete id="deletePushecailiaoByIds" parameterType="String">
+        delete from pushecailiao where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
