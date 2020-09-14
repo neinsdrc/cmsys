@@ -12,6 +12,10 @@ spring:
     password: Kong123@
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
 
 mybatis:
   mapperLocations: classpath:static/mapper/*.xml

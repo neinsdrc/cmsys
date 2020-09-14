@@ -1,14 +1,12 @@
 package com.buaa.cmsys.entity;
 
-
 /**
- * 【请填写功能名称】对象 pushecailiao
- * 
- * @author ruoyi
+ * 对象 pushecailiao
+ * @author neins
  * @date 2020-09-12
+ * @注意 这里可以通过lombok注解快速生成构造器，相关依赖已经引入
  */
-public class Pushecailiao
-{
+public class Pushecailiao {
     private Long id;
     private String cengid;
     private String cailiaoType;
@@ -183,26 +181,6 @@ public class Pushecailiao
 
     @Override
     public String toString() {
-        return "Pushecailiao{" +
-                "id=" + id +
-                ", cengid='" + cengid + '\'' +
-                ", cailiaoType='" + cailiaoType + '\'' +
-                ", cailiaoId='" + cailiaoId + '\'' +
-                ", pushejiaodu='" + pushejiaodu + '\'' +
-                ", gyXiesu='" + gyXiesu + '\'' +
-                ", gyJingei='" + gyJingei + '\'' +
-                ", gyQieshenY='" + gyQieshenY + '\'' +
-                ", gyQieshenX='" + gyQieshenX + '\'' +
-                ", gyXixuefangshi='" + gyXixuefangshi + '\'' +
-                ", djCailiao='" + djCailiao + '\'' +
-                ", djZhonglei='" + djZhonglei + '\'' +
-                ", djZhijing='" + djZhijing + '\'' +
-                ", gyGongjiancailiao='" + gyGongjiancailiao + '\'' +
-                ", djLuoxuanjiao='" + djLuoxuanjiao + '\'' +
-                ", djChishu='" + djChishu + '\'' +
-                ", djJinqianjiao='" + djJinqianjiao + '\'' +
-                ", djTuceng='" + djTuceng + '\'' +
-                ", jcPmd='" + jcPmd + '\'' +
-                '}';
+        return "Pushecailiao{id=" + id + ", cengid='" + cengid + '\'' + ", cailiaoType='" + cailiaoType + '\'' + ", cailiaoId='" + cailiaoId + '\'' + ", pushejiaodu='" + pushejiaodu + '\'' + ", gyXiesu='" + gyXiesu + '\'' + ", gyJingei='" + gyJingei + '\'' + ", gyQieshenY='" + gyQieshenY + '\'' + ", gyQieshenX='" + gyQieshenX + '\'' + ", gyXixuefangshi='" + gyXixuefangshi + '\'' + ", djCailiao='" + djCailiao + '\'' + ", djZhonglei='" + djZhonglei + '\'' + ", djZhijing='" + djZhijing + '\'' + ", gyGongjiancailiao='" + gyGongjiancailiao + '\'' + ", djLuoxuanjiao='" + djLuoxuanjiao + '\'' + ", djChishu='" + djChishu + '\'' + ", djJinqianjiao='" + djJinqianjiao + '\'' + ", djTuceng='" + djTuceng + '\'' + ", jcPmd='" + jcPmd + '\'' + '}';
     }
 }
