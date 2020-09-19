@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/buaa")
 public class PushecailiaoController {
-    @Autowired /*@Resource*/
+    @Autowired
     private IPushecailiaoService pushecailiaoService;
 
     /**
@@ -29,50 +29,4 @@ public class PushecailiaoController {
         return list;
     }
 
-
-// @GetMapping("/export") public AjaxResult export(Pushecailiao pushecailiao) {
-//        List<Pushecailiao> list = pushecailiaoService.selectPushecailiaoList(pushecailiao);
-//        ExcelUtil<Pushecailiao> util = new ExcelUtil<Pushecailiao>(Pushecailiao.class);
-//        return util.exportExcel(list, "pushecailiao");
-//    }
-//
-//    /**
-//     * 获取【请填写功能名称】详细信息
-//     */
-//
-//    @GetMapping(value = "/{id}")
-//    public AjaxResult getInfo(@PathVariable("id") Long id)
-//    {
-//        return AjaxResult.success(pushecailiaoService.selectPushecailiaoById(id));
-//    }
-//
-//    /**
-//     * 新增【请填写功能名称】
-//     */
-//
-//    @PostMapping
-//    public AjaxResult add(@RequestBody Pushecailiao pushecailiao)
-//    {
-//        return toAjax(pushecailiaoService.insertPushecailiao(pushecailiao));
-//    }
-//
-//    /**
-//     * 修改【请填写功能名称】
-//     */
-//
-//    @PutMapping
-//    public AjaxResult edit(@RequestBody Pushecailiao pushecailiao)
-//    {
-//        return toAjax(pushecailiaoService.updatePushecailiao(pushecailiao));
-//    }
-//
-//    /**
-//     * 删除【请填写功能名称】
-//     */
-//
-//	@DeleteMapping("/{ids}")
-//    public AjaxResult remove(@PathVariable Long[] ids)
-//    {
-//        return toAjax(pushecailiaoService.deletePushecailiaoByIds(ids));
-    /*    }*/
 }
