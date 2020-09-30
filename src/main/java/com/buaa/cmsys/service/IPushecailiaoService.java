@@ -6,7 +6,7 @@ import com.buaa.cmsys.entity.Pushecailiao;
 /**
  * 【请填写功能名称】Service接口
  * 
- * @author ruoyi
+ * @author neins
  * @date 2020-09-12
  */
 public interface IPushecailiaoService 
